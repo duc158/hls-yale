@@ -1,18 +1,106 @@
 <% include ./partials/header.ejs %>
 
   <div class="container">
-    <div class="jumbotron">
-      <% if (locals.user) { %>
-        <p> Welcome, <%=user.givenName%></p>
-        <form id="logoutForm" action="/logout" method="post">
-          <input type="submit" value="Logout"/>
-        </form>
-      <% } else {%>
-        <p> Welcome to HLS - Yale United, ready to get started? </p>
-        <p> <a href="/login"> Login </a> </p>
-        <p> <a href="/register"> Register </a> </p>
-      <% } %>
-    </div>
+    <% if (locals.user) { %>
+      <!-- Welcome Message -->
+      <form id="logoutForm" class="form-inline" action="/logout" method="post">
+        Welcome, <%=user.fullName%>.
+        <button class="btn btn-link" type="submit" value="Logout"/>Logout</button>
+      </form>
+
+      <!-- Individual Action -->
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <!-- Action 1 -->
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Run for Office
+              </a>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+              <!-- Find Organizational Support -->
+              <p>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFindOrgSupport" aria-expanded="false" aria-controls="collapseFindOrgSupport">
+                  Find Organizational Support
+                </button>
+              </p>
+              <div class="collapse" id="collapseFindOrgSupport">
+                <div class="card card-block">
+                  Reach out to these organization for support with your campaign
+                </div>
+              </div>
+              <!-- End of Find Organizational Support -->
+              <!-- Basic Services -->
+              <p>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseBasicServices" aria-expanded="false" aria-controls="collapseBasicServices">
+                  Basic Services
+                </button>
+              </p>
+              <div class="collapse" id="collapseBasicServices">
+                <div class="card card-block">
+                  Please refer to these external source for tools and services for your campaign
+                </div>
+              </div>
+              <!-- End of Basic Services -->
+              <!-- List yourself on our Wiki page -->
+              <p>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseListOnWiki" aria-expanded="false" aria-controls="collapseListOnWiki">
+                  List Yourself on our Wiki Page
+                </button>
+              </p>
+              <div class="collapse" id="collapseListOnWiki">
+                <div class="card card-block">
+                  Please fill out the following information to be listed on our Wiki page. All information
+                  will be automatically populated on our Wiki page.
+                </div>
+              </div>
+              <!-- End of Basic Services -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Action 2 -->
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collapsible Group Item #2
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-block">
+              This is a dummy text.
+            </div>
+          </div>
+        </div>
+
+        <!-- Action 3 -->
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Collapsible Group Item #3
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="card-block">
+              This is a dummy text.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% } else {%>
+      <!-- Welcome message for non-user -->
+      <p> Welcome to HLS - Yale United, ready to get started? </p>
+      <p> <a href="/login"> Login </a> </p>
+      <p> <a href="/register"> Register </a> </p>
+    <% } %>
   </div>
 
 <% include ./partials/footer.ejs %>
