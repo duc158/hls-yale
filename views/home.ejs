@@ -2,14 +2,25 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1> Hello! </h1>
       <% if (locals.user) { %>
-        <p> Welcome, <%=user.fullName%> </p>
-        <form action="/logout" method="POST">
-          <p><input type="submit" value="Logout"></p>
+        <form class="form-inline" action="/logout" method="POST">
+          <p> Welcome, <%=user.fullName%> </p>
+          <p><button class="btn btn-link" type="submit" value="Logout"><small>Logout</small></button></p>
         </form>
+        <h2> Create a new Rally </h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="rallyName" placeholder="i.e. Woman March">
+          </div>
+          <div class="form-group">
+            <label for="zipcode">ZipCode</label>
+            <input type="text" class="form-control" id="zipcode" placeholder="i.e. 06511">
+          </div>
+        </form>
+
       <% } else {%>
-        <p> Welcome to my app, ready to get started? </p>
+        <p> Welcome to HLS - Yale United, ready to get started? </p>
         <p> <a href="/login"> Login </a> </p>
         <p> <a href="/register"> Register </a> </p>
       <% } %>

@@ -16,13 +16,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 // init stormpath
+const stormpathInfo = require('./config/stormpath.js');
 app.use(stormpath.init(app, {
   apiKey: {
-    id: process.env.stormpathId,
-    secret: process.env.stormpathSecret
+    id: process.env.stormpathId || stormpathInfo.id,
+    secret: process.env.stormpathSecret || stormpathInfo.secret
   },
   application: {
-    href: process.env.stormpathHref
+    href: process.env.stormpathHref || stormpathInfo.href
   }
 }));
 
