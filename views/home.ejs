@@ -9,13 +9,14 @@
       </form>
 
       <!-- Individual Action -->
-      <div id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="jumbotron">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
         <!-- Action 1 -->
         <div class="card">
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Run for Office
+                <i class="fa fa-university" aria-hidden="true"></i> Run for Office
               </a>
             </h5>
           </div>
@@ -24,7 +25,7 @@
               <!-- Find Organizational Support -->
               <p>
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFindOrgSupport" aria-expanded="false" aria-controls="collapseFindOrgSupport">
-                  Find Organizational Support
+                  <i class="fa fa-life-ring" aria-hidden="true"></i> Find Organizational Support
                 </button>
               </p>
               <div class="collapse" id="collapseFindOrgSupport">
@@ -36,7 +37,7 @@
               <!-- Basic Services -->
               <p>
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseBasicServices" aria-expanded="false" aria-controls="collapseBasicServices">
-                  Basic Services
+                  <i class="fa fa-road" aria-hidden="true"></i> Basic Services
                 </button>
               </p>
               <div class="collapse" id="collapseBasicServices">
@@ -48,7 +49,7 @@
               <!-- List yourself on our Wiki page -->
               <p>
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseListOnWiki" aria-expanded="false" aria-controls="collapseListOnWiki">
-                  List Yourself on our Wiki Page
+                  <i class="fa fa-user" aria-hidden="true"></i> List Yourself on our Wiki Page
                 </button>
               </p>
               <div class="collapse" id="collapseListOnWiki">
@@ -58,16 +59,15 @@
                 </div>
               </div>
               <!-- End of Basic Services -->
-            </div>
           </div>
         </div>
 
-        <!-- Action 2 -->
+        <!-- Frustration -->
         <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
             <h5 class="mb-0">
               <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
+                <i class="fa fa-paper-plane" aria-hidden="true"></i> File a Frustration
               </a>
             </h5>
           </div>
@@ -78,21 +78,7 @@
           </div>
         </div>
 
-        <!-- Action 3 -->
-        <div class="card">
-          <div class="card-header" role="tab" id="headingThree">
-            <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-              </a>
-            </h5>
-          </div>
-          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="card-block">
-              This is a dummy text.
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
 
     <% } else {%>
