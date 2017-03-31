@@ -3,26 +3,16 @@
   <div class="container">
     <div class="jumbotron">
       <% if (locals.user) { %>
-        <form class="form-inline" action="/logout" method="POST">
-          <p> Welcome, <%=user.fullName%> </p>
-          <p><button class="btn btn-link" type="submit" value="Logout"><small>Logout</small></button></p>
+        <p> Welcome, <%=user.givenName%></p>
+        <form id="logoutForm" action="/logout" method="post">
+          <input type="submit" value="Logout"/>
         </form>
-        <h2> Create a new Rally </h2>
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="rallyName" placeholder="i.e. Woman March">
-          </div>
-          <div class="form-group">
-            <label for="zipcode">ZipCode</label>
-            <input type="text" class="form-control" id="zipcode" placeholder="i.e. 06511">
-          </div>
-        </form>
-
       <% } else {%>
         <p> Welcome to HLS - Yale United, ready to get started? </p>
         <p> <a href="/login"> Login </a> </p>
         <p> <a href="/register"> Register </a> </p>
       <% } %>
+    </div>
+  </div>
 
 <% include ./partials/footer.ejs %>
