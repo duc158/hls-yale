@@ -31,6 +31,10 @@ app.get('/', function(req, res) {
   res.render('home');
 });
 
+app.get('/phonebank', function(req, res) {
+  res.render('phonebank');
+});
+
 // server start
 const server = app.listen(port, host, function () {
   console.log(
