@@ -22,6 +22,23 @@ mongoose.connect(configDB.url); // connect to our database
 
 const Phonebanks = require('./models/phonebank.js');
 
+// Middleware
+
+function loadPhonebanks(req, res, next) {
+
+	Phonebanks.find(function(err, phonebank) {
+      if(!err) {
+  			res.locals.phonebank = phonebank;
+  		}
+  		else {
+  			console.log('Error loading task.');
+  			res.redirect('/');
+  		}
+  		next();
+	  }
+  );
+}
+
 // init stormpath
 // const stormpathInfo = require('./config/stormpath.js');
 // app.use(stormpath.init(app, {
@@ -38,7 +55,7 @@ app.get('/', function(req, res) {
   res.render('home');
 });
 
-app.get('/phonebank', function(req, res) {
+app.get('/phonebank', loadPhonebanks,function(req, res) {
   res.render('phonebank/list');
 });
 
@@ -47,22 +64,23 @@ app.get('/phonebank/add', function(req, res) {
 });
 
 app.post('/phonebank/add', function(req, res) {
+
   const newPhoneBank = new Phonebanks();
 
   newPhoneBank.candidateName = req.body.candidateName;
   newPhoneBank.officeRunning = req.body.officeRunning;
   newPhoneBank.politicalParty = req.body.politicalParty;
-  newPhoneBank.link = req.body.link;
+  newPhoneBank.phonebankLink = req.body.phonebankLink;
   newPhoneBank.intendedDate = req.body.intendedDate;
 
   newPhoneBank.save(function(err, phonebank){
 
     if(phonebank && !err){
-      res.redirect('/');
+      res.redirect('/phonebank');
       return;
   	}
     const errors = "Error adding the phonebank";
-    
+
   });
 
 });

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const phonebankSchema = new Schema({
   candidateName: String,
   officeRunning: String,
-  candidateParty: String,
+  politicalParty: String,
   phonebankLink: String,
   intendedDate: String
 });

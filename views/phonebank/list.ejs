@@ -14,14 +14,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Senator</td>
-          <td>Republican</td>
-          <td>http://example.com</td>
-          <td>May 11, 2017</td>
-        </tr>
+        <% phonebank.forEach(function(phonebank) { %>
+          <tr>
+            <th scope="row">1</th>
+            <td><%=phonebank.candidateName%></td>
+            <td><%=phonebank.officeRunning%></td>
+            <td><%=phonebank.politicalParty%></td>
+            <td><%=phonebank.phonebankLink%></td>
+            <td><%=phonebank.intendedDate%></td>
+          </tr>
+        <% }); %>
       </tbody>
     </table>
   </div>
