@@ -42,6 +42,14 @@ app.get('/phonebank', function(req, res) {
   res.render('phonebank/list');
 });
 
+app.get('/phonebank/add', function(req, res) {
+  res.render('phonebank/add');
+});
+
+app.post('/phonebank/add', function(req, res) {
+  res.send(req.body.candidateName);
+});
+
 // server start
 const server = app.listen(port, host, function () {
   console.log(
