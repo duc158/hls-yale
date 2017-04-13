@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var stormpath = require('express-stormpath');
+// var stormpath = require('express-stormpath');
 
 var app = express();
 var host = process.env.IP || '0.0.0.0';
@@ -16,18 +16,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 
 // init stormpath
-const stormpathInfo = require('./config/stormpath.js');
-app.use(stormpath.init(app, {
-  apiKey: {
-    id: process.env.stormpathId || stormpathInfo.id,
-    secret: process.env.stormpathSecret || stormpathInfo.secret
-  },
-  application: {
-    href: process.env.stormpathHref || stormpathInfo.href
-  }
-}));
+// const stormpathInfo = require('./config/stormpath.js');
+// app.use(stormpath.init(app, {
+//   apiKey: {
+//     id: process.env.stormpathId || stormpathInfo.id,
+//     secret: process.env.stormpathSecret || stormpathInfo.secret
+//   },
+//   application: {
+//     href: process.env.stormpathHref || stormpathInfo.href
+//   }
+// }));
 
-app.get('/', stormpath.getUser, function(req, res) {
+app.get('/', function(req, res) {
   res.render('home');
 });
 
