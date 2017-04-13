@@ -1,38 +1,29 @@
 <% include ./partials/header.ejs %>
 
-<div class="container">
-  <!-- Individual Action -->
-  <div class="jumbotron">
-    <div id="accordion" role="tablist" aria-multiselectable="true">
-      <!-- Action 1 -->
-      <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-          <h5 class="mb-0">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <i class="fa fa-university" aria-hidden="true"></i> Individual Action
-            </a>
-          </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-          <div class="card-block">
-            <!-- Election-related Services & Activities -->
-            <p>
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFindOrgSupport" aria-expanded="false" aria-controls="collapseFindOrgSupport">
-                <i class="fa fa-folder" aria-hidden="true"></i> Election-related Services and Activities
-              </button>
-            </p>
-            <div class="collapse" id="collapseFindOrgSupport">
-              <div class="card card-block">
-                <ul>
-                  <li><a href="/phonebank">Phone Bank</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  <div class="container-fluid">
+    <table class="table">
+      <thead>
+        <!-- Column name -->
+        <tr>
+          <th>#</th>
+          <th>Candidate Name</th>
+          <th>Office Running</th>
+          <th>Political Party</th>
+          <th>Link</th>
+          <th>Intended date to call</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Senator</td>
+          <td>Republican</td>
+          <td>http://example.com</td>
+          <td>May 11, 2017</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
 <% include ./partials/footer.ejs %>
