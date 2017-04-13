@@ -47,7 +47,24 @@ app.get('/phonebank/add', function(req, res) {
 });
 
 app.post('/phonebank/add', function(req, res) {
-  res.send(req.body.candidateName);
+  const newPhoneBank = new Phonebanks();
+
+  newPhoneBank.candidateName = req.body.candidateName;
+  newPhoneBank.officeRunning = req.body.officeRunning;
+  newPhoneBank.politicalParty = req.body.politicalParty;
+  newPhoneBank.link = req.body.link;
+  newPhoneBank.intendedDate = req.body.intendedDate;
+
+  newPhoneBank.save(function(err, phonebank){
+
+    if(phonebank && !err){
+      res.redirect('/');
+      return;
+  	}
+    const errors = "Error adding the phonebank";
+    
+  });
+
 });
 
 // server start
