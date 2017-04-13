@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/phonebank', function(req, res) {
-  res.render('phonebank');
+  res.render('phonebank/list');
 });
 
 // server start
