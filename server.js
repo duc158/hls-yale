@@ -59,8 +59,8 @@ app.get('/phonebank', loadPhonebanks,function(req, res) {
   res.render('phonebank/list');
 });
 
-app.get('/phonebank/add', function(req, res) {
-  res.render('phonebank/add');
+app.get('/admin', function(req, res) {
+  res.render('admin/admin');
 });
 
 app.post('/phonebank/add', function(req, res) {
