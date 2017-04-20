@@ -1,37 +1,46 @@
 <% include ./partials/header.ejs %>
 
-<div class="container">
-  <!-- Individual Action -->
-  <div class="jumbotron">
-    <div id="accordion" role="tablist" aria-multiselectable="true">
-      <!-- Action 1 -->
-      <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-          <h5 class="mb-0">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <i class="fa fa-university" aria-hidden="true"></i> Individual Action
-            </a>
-          </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-          <div class="card-block">
-            <!-- Election-related Services & Activities -->
-            <p>
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFindOrgSupport" aria-expanded="false" aria-controls="collapseFindOrgSupport">
-                <i class="fa fa-folder" aria-hidden="true"></i> Election-related Services and Activities
-              </button>
-            </p>
-            <div class="collapse" id="collapseFindOrgSupport">
-              <div class="card card-block">
-                <ul>
-                  <li><a href="/phonebank">Phone Bank</a></li>
-                </ul>
-              </div>
+<!-- Main -->
+  <div id="main">
+    <div class="inner">
+      <header>
+        <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+      </header>
+      <section class="tiles">
+        <article class="style1">
+          <span class="image">
+            <img src="images/pic01.jpg" alt="" />
+          </span>
+          <a href="/phonebank">
+            <h2>Phonebank</h2>
+            <div class="content">
+              <p>The most comprehensive collection of Phone Bank.</p>
             </div>
-          </div>
-        </div>
-
-      </div>
+          </a>
+        </article>
+        <article class="style2">
+          <span class="image">
+            <img src="images/pic02.jpg" alt="" />
+          </span>
+          <a href="generic.html">
+            <h2>Lorem</h2>
+            <div class="content">
+              <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+          </a>
+        </article>
+        <article class="style3">
+          <span class="image">
+            <img src="images/pic03.jpg" alt="" />
+          </span>
+          <a href="generic.html">
+            <h2>Feugiat</h2>
+            <div class="content">
+              <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+            </div>
+          </a>
+        </article>
+      </section>
     </div>
   </div>
 
