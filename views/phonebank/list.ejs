@@ -1,35 +1,39 @@
 <% include ../partials/header.ejs %>
 
-  <div class="container-fluid">
-    <br/>
-    <p>
-      <a href="/phonebank/add" class="btn btn-primary">Add a Phonebank</a>
-    </p>
-    <table class="table">
-      <thead>
-        <!-- Column name -->
-        <tr>
-          <th>#</th>
-          <th>Candidate Name</th>
-          <th>Office Running</th>
-          <th>Political Party</th>
-          <th>Link</th>
-          <th>Intended date to call</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% phonebank.forEach(function(phonebank) { %>
-          <tr>
-            <th scope="row">1</th>
-            <td><%=phonebank.candidateName%></td>
-            <td><%=phonebank.officeRunning%></td>
-            <td><%=phonebank.politicalParty%></td>
-            <td><%=phonebank.phonebankLink%></td>
-            <td><%=phonebank.intendedDate%></td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
+<div id="main">
+  <div class="inner">
+
+    <!-- Table -->
+    <section>
+        <h2>Phonebank</h2>
+        <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Candidate Name</th>
+              <th>Office Running</th>
+              <th>Political Party</th>
+              <th>Link</th>
+              <th>Intended date to call</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% phonebank.forEach(function(phonebank) { %>
+              <tr>
+                <th scope="row">1</th>
+                <td><%=phonebank.candidateName%></td>
+                <td><%=phonebank.officeRunning%></td>
+                <td><%=phonebank.politicalParty%></td>
+                <td><%=phonebank.phonebankLink%></td>
+                <td><%=phonebank.intendedDate%></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </div>
 
 <% include ../partials/footer.ejs %>
