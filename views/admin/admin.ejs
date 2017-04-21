@@ -39,7 +39,10 @@
           <!-- Intended Date -->
           <div class="row uniform">
             <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="callDate" placeholder="Call Date">
+              <input data-toggle="datepicker" type="text" class="form-control" name="callDate" placeholder="Call Date">
+              <script type="text/javascript">
+                $('[data-toggle="datepicker"]').datepicker();
+              </script>
             </div>
           </div>
           <div class="row uniform">
