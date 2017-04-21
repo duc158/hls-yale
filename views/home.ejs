@@ -22,13 +22,42 @@
           <span class="image">
             <img src="images/pic02.jpg" alt="" />
           </span>
-          <a href="generic.html">
-            <h2>Lorem</h2>
+          <a class="routeB" href="#">
+            <h2>Donate</h2>
             <div class="content">
-              <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+              <p>Make a donation to your local candidate.</p>
             </div>
           </a>
+          <script>
+
+            $('a.routeB').click(function(popup) {
+
+              swal({
+                title: "Insert your zipcode",
+                text: "This will allow us to pre-populate candidates in your districts.",
+                type: "input",
+                inputType: "text",
+                showCancelButton: true,
+                closeOnConfirm: false
+
+              }, function(zipcode) {
+
+                if (zipcode === "") {
+                  swal.showInputError("You need to input your location in order to do this!");
+                      return false;
+                }
+
+                $.ajax({
+                  url: "/api/phonebank?=" + zipcode,
+                      type: "GET"
+                })
+
+              });
+            });
+
+          </script>
         </article>
+
         <article class="style3">
           <span class="image">
             <img src="images/pic03.jpg" alt="" />
