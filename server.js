@@ -24,20 +24,21 @@ const Phonebanks = require('./models/phonebank.js');
 
 // Middleware
 
-function loadPhonebanks(req, res, next) {
+	// load all phonebank
+	function loadPhonebanks(req, res, next) {
 
-	Phonebanks.find(function(err, phonebank) {
-      if(!err) {
-  			res.locals.phonebank = phonebank;
-  		}
-  		else {
-  			console.log('Error loading task.');
-  			res.redirect('/');
-  		}
-  		next();
-	  }
-  );
-}
+		Phonebanks.find(function(err, phonebank) {
+	      if(!err) {
+	  			res.locals.phonebank = phonebank;
+	  		}
+	  		else {
+	  			console.log('Error loading task.');
+	  			res.redirect('/');
+	  		}
+	  		next();
+		  }
+	  );
+	}
 
 // init stormpath
 // const stormpathInfo = require('./config/stormpath.js');
@@ -55,33 +56,35 @@ app.get('/', function(req, res) {
   res.render('home');
 });
 
-app.get('/phonebank', loadPhonebanks,function(req, res) {
-  res.render('phonebank/list');
-});
-
 app.get('/admin', function(req, res) {
   res.render('admin/admin');
 });
 
-app.post('/phonebank/add', function(req, res) {
+	// phonebank
+	app.get('/phonebank', loadPhonebanks,function(req, res) {
+	  res.render('phonebank/list');
+	});
 
-  const newPhoneBank = new Phonebanks();
+	app.post('/phonebank/add', function(req, res) {
 
-  newPhoneBank.candidateName = req.body.candidateName;
-  newPhoneBank.officeRunning = req.body.officeRunning;
-  newPhoneBank.politicalParty = req.body.politicalParty;
-  newPhoneBank.phonebankLink = req.body.phonebankLink;
-  newPhoneBank.intendedDate = req.body.intendedDate;
+	  const newPhoneBank = new Phonebanks();
 
-  newPhoneBank.save(function(err, phonebank){
+	  newPhoneBank.candidate = req.body.candidate;
+		newPhoneBank.location = req.body.location;
+	  newPhoneBank.office = req.body.office;
+	  newPhoneBank.party = req.body.party;
+	  newPhoneBank.link = req.body.link;
+	  newPhoneBank.callDate = req.body.callDate;
 
-    if(phonebank && !err){
-      res.redirect('/phonebank');
-      return;
-  	}
-    const errors = "Error adding the phonebank";
+	  newPhoneBank.save(function(err, phonebank){
 
-  });
+	    if(phonebank && !err){
+	      res.redirect('/phonebank');
+	      return;
+	  	}
+	    const errors = "Error adding the phonebank";
+
+	  });
 
 });
 

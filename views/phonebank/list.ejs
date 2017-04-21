@@ -11,20 +11,22 @@
           <thead>
             <tr>
               <th>Candidate Name</th>
-              <th>Office Running</th>
-              <th>Political Party</th>
+              <th>Location</th>
+              <th>Office Sought</th>
+              <th>Party</th>
               <th>Link</th>
-              <th>Intended date to call</th>
+              <th>Call Date</th>
             </tr>
           </thead>
           <tbody>
             <% phonebank.forEach(function(phonebank) { %>
               <tr>
-                <td><%=phonebank.candidateName%></td>
-                <td><%=phonebank.officeRunning%></td>
-                <td><%=phonebank.politicalParty%></td>
-                <td><%=phonebank.phonebankLink%></td>
-                <td><%=phonebank.intendedDate%></td>
+                <td><%=phonebank.candidate%></td>
+                <td><%=phonebank.location%></td>
+                <td><%=phonebank.office%></td>
+                <td><%=phonebank.party%></td>
+                <td><%=phonebank.link%></td>
+                <td><%=phonebank.callDate%></td>
               </tr>
               <% }); %>
             </tbody>
