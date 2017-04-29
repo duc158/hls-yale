@@ -36,7 +36,7 @@ const Campaigns = require('./models/campaign.js');
 
 // route
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('home', {user: req.user});
 });
 
 	// user authentication
