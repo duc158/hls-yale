@@ -78,10 +78,11 @@ app.get('/', function(req, res) {
 
     // admin
     app.get('/admin', isLoggedIn, function(req, res) {
-      if (req.user.local.type == "admin") {
-			  res.render('admin/admin', {user : req.user});
+      const admin = "alex.le@yale.edu, ssanyal@jd17.law.harvard.edu, byronruby@gmail.com";
+      if (admin.indexOf(req.user.local.email) > -1) {
+        res.render('admin/admin', {user : req.user});
       } else {
-        res.send('You are not authorized!');
+        res.send('You are not authorized');
       }
 		});
 
