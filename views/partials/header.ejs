@@ -49,6 +49,10 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="/">Home</a></li>
+							<% if (!locals.user) { %>
+							<li><a href="/login">Login</a></li>
+							<li><a href="/signup">Signup</a></li>
+							<% } %>
 							<li><a href="#">About Us</a></li>
 							<li><a href="#">How to Use</a></li>
 						</ul>
