@@ -44,7 +44,7 @@ const Campaigns = require('./models/campaign.js');
 	// load all campaigns
 	function loadCampaigns(req, res, next) {
 
-		Campaigns.find(function(err, campaign) {
+		Campaigns.find({zipcode: req.params.zipcode}, function(err, campaign) {
 				if(!err) {
 					res.locals.campaign = campaign;
 				}
@@ -109,7 +109,7 @@ app.get('/admin', function(req, res) {
 		newCampaign.save(function(err, campaign){
 
 			if(campaign && !err){
-				res.redirect('/campaign');
+				res.redirect('/campaign/'+req.body.zipcode);
 				return;
 			}
 			const errors = "Error adding the campaign";

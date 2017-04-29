@@ -53,6 +53,51 @@
         </form>
       </section>
 
+      <section>
+        <h2>Add a New Campaign for Donation</h2>
+        <form action="/campaign/add" method="POST">
+          <!-- Candidate Name -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" class="form-control" name="candidate" placeholder="Candidate Name">
+            </div>
+          </div>
+          <!-- Office Running -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" class="form-control" name="office" placeholder="Office Sought">
+            </div>
+          </div>
+          <!-- Political Party -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" class="form-control" name="party" placeholder="Political Party">
+            </div>
+          </div>
+          <!-- Election Date -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input data-toggle="datepicker" type="text" class="form-control" name="electionDate" placeholder="Election Date">
+              <script type="text/javascript">
+                $('[data-toggle="datepicker"]').datepicker();
+              </script>
+            </div>
+          </div>
+          <!-- Zipcode -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" class="form-control" name="zipcode" placeholder="Zipcode">
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <button type="submit" class="button special">Add Campaign</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
     </div>
   </div>
 
