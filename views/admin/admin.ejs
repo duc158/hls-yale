@@ -2,102 +2,103 @@
 
   <div class="main">
     <div class="inner">
-
-      <section>
-        <h2>Add a New Phonebank</h2>
-        <form action="/phonebank/add" method="POST">
-          <!-- Candidate Name -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="candidate" placeholder="Candidate Name">
+      <div class="row">
+        <!-- new phonebank -->
+        <section>
+          <h2>Add a New Phonebank</h2>
+          <form action="/phonebank/add" method="POST">
+            <!-- Candidate Name -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="candidate" placeholder="Candidate Name">
+              </div>
             </div>
-          </div>
-          <!-- Location -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="location" placeholder="Location">
+            <!-- Location -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="location" placeholder="Location">
+              </div>
             </div>
-          </div>
-          <!-- Office Running -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="office" placeholder="Office Sought">
+            <!-- Office Running -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="office" placeholder="Office Sought">
+              </div>
             </div>
-          </div>
-          <!-- Political Party -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="party" placeholder="Political Party">
+            <!-- Political Party -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="party" placeholder="Political Party">
+              </div>
             </div>
-          </div>
-          <!-- Link -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" name="link" placeholder="Link to the Phone Bank">
+            <!-- Link -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" name="link" placeholder="Link to the Phonebank">
+              </div>
             </div>
-          </div>
-          <!-- Intended Date -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input data-toggle="datepicker" type="text" class="form-control" name="callDate" placeholder="Call Date">
-              <script type="text/javascript">
-                $('[data-toggle="datepicker"]').datepicker();
-              </script>
+            <!-- Intended Date -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input data-toggle="datepicker" type="text" class="form-control" name="callDate" placeholder="Call Date">
+                <script type="text/javascript">
+                  $('[data-toggle="datepicker"]').datepicker();
+                </script>
+              </div>
             </div>
-          </div>
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <button type="submit" class="button special">Add Phonebank</button>
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <button type="submit" class="button special">Add Phonebank</button>
+              </div>
             </div>
-          </div>
-        </form>
-      </section>
-
-      <section>
-        <h2>Add a New Campaign for Donation</h2>
-        <form action="/campaign/add" method="POST">
-          <!-- Candidate Name -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="candidate" placeholder="Candidate Name">
+          </form>
+        </section>
+        <!-- new campaign -->
+        <section>
+          <h2>Add a New Campaign</h2>
+          <form action="/campaign/add" method="POST">
+            <!-- Candidate Name -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="candidate" placeholder="Candidate Name">
+              </div>
             </div>
-          </div>
-          <!-- Office Running -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="office" placeholder="Office Sought">
+            <!-- Office Running -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="office" placeholder="Office Sought">
+              </div>
             </div>
-          </div>
-          <!-- Political Party -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="party" placeholder="Political Party">
+            <!-- Political Party -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="party" placeholder="Political Party">
+              </div>
             </div>
-          </div>
-          <!-- Election Date -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input data-toggle="datepicker" type="text" class="form-control" name="electionDate" placeholder="Election Date">
-              <script type="text/javascript">
-                $('[data-toggle="datepicker"]').datepicker();
-              </script>
+            <!-- Election Date -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input data-toggle="datepicker" type="text" class="form-control" name="electionDate" placeholder="Election Date">
+                <script type="text/javascript">
+                  $('[data-toggle="datepicker"]').datepicker();
+                </script>
+              </div>
             </div>
-          </div>
-          <!-- Zipcode -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <input type="text" class="form-control" name="zipcode" placeholder="Zipcode">
+            <!-- Zipcode -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <input type="text" class="form-control" name="zipcode" placeholder="Zipcode">
+              </div>
             </div>
-          </div>
-          <!-- Submit button -->
-          <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-              <button type="submit" class="button special">Add Campaign</button>
+            <!-- Submit button -->
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)">
+                <button type="submit" class="button special">Add Campaign</button>
+              </div>
             </div>
-          </div>
-        </form>
-      </section>
-
+          </form>
+        </section>
+      </div>
     </div>
   </div>
 
