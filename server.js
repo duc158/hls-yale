@@ -21,6 +21,7 @@ const configDB = require('./config/database.js');
 mongoose.connect(configDB.url); // connect to our database
 
 const Phonebanks = require('./models/phonebank.js');
+const Campaigns = require('./models/campaign.js');
 
 // Middleware
 
@@ -32,7 +33,7 @@ const Phonebanks = require('./models/phonebank.js');
 	  			res.locals.phonebank = phonebank;
 	  		}
 	  		else {
-	  			console.log('Error loading task.');
+	  			console.log('Error loading phonebanks.');
 	  			res.redirect('/');
 	  		}
 	  		next();
@@ -40,17 +41,21 @@ const Phonebanks = require('./models/phonebank.js');
 	  );
 	}
 
-// init stormpath
-// const stormpathInfo = require('./config/stormpath.js');
-// app.use(stormpath.init(app, {
-//   apiKey: {
-//     id: process.env.stormpathId || stormpathInfo.id,
-//     secret: process.env.stormpathSecret || stormpathInfo.secret
-//   },
-//   application: {
-//     href: process.env.stormpathHref || stormpathInfo.href
-//   }
-// }));
+	// load all campaigns
+	function loadCampaigns(req, res, next) {
+
+		Campaigns.find(function(err, campaign) {
+				if(!err) {
+					res.locals.campaign = campaign;
+				}
+				else {
+					console.log('Error loading campaigns.');
+					res.redirect('/');
+				}
+				next();
+			}
+		);
+	}
 
 app.get('/', function(req, res) {
   res.render('home');
@@ -85,8 +90,32 @@ app.get('/admin', function(req, res) {
 	    const errors = "Error adding the phonebank";
 
 	  });
+	});
 
-});
+	// donate campaign
+	app.get('/campaign/:zipcode', loadCampaigns,function(req, res) {
+		res.render('campaign/list');
+	});
+
+	app.post('/campaign/add', function(req, res) {
+		const newCampaign = new Campaigns();
+
+		newCampaign.zipcode = req.body.zipcode;
+		newCampaign.candidate = req.body.candidate;
+		newCampaign.office = req.body.office;
+		newCampaign.party = req.body.party;
+		newCampaign.electionDate = req.body.electionDate;
+
+		newCampaign.save(function(err, campaign){
+
+			if(campaign && !err){
+				res.redirect('/campaign');
+				return;
+			}
+			const errors = "Error adding the campaign";
+
+		});
+	});
 
 // server start
 const server = app.listen(port, host, function () {

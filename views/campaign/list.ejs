@@ -1,0 +1,36 @@
+<% include ../partials/header.ejs %>
+
+<div id="main">
+  <div class="inner">
+    <!-- Table -->
+    <section>
+        <h2>Campaign</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Candidate Name</th>
+                <th>Office Sought</th>
+                <th>Party</th>
+                <th>Election Date</th>
+                <th>Zipcode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% campaign.forEach(function(campaign) { %>
+                <tr>
+                  <td><%=campaign.candidate%></td>
+                  <td><%=campaign.office%></td>
+                  <td><%=campaign.party%></td>
+                  <td><%=campaign.electionDate%></td>
+                  <td><%=campaign.zipcode%></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+<% include ../partials/footer.ejs %>

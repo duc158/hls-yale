@@ -7,6 +7,7 @@
         <p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
       </header>
       <section class="tiles">
+        <!-- phonebank -->
         <article class="style1">
           <span class="image">
             <img src="images/pic01.jpg" alt="" />
@@ -18,6 +19,7 @@
             </div>
           </a>
         </article>
+        <!-- donate -->
         <article class="style2">
           <span class="image">
             <img src="images/pic02.jpg" alt="" />
@@ -28,36 +30,8 @@
               <p>Make a donation to your local candidate.</p>
             </div>
           </a>
-          <script>
-
-            $('a.routeB').click(function(popup) {
-
-              swal({
-                title: "Insert your zipcode",
-                text: "This will allow us to pre-populate candidates in your districts.",
-                type: "input",
-                inputType: "text",
-                showCancelButton: true,
-                closeOnConfirm: false
-
-              }, function(zipcode) {
-
-                if (zipcode === "") {
-                  swal.showInputError("You need to input your location in order to do this!");
-                      return false;
-                }
-
-                $.ajax({
-                  url: "/api/phonebank?=" + zipcode,
-                      type: "GET"
-                })
-
-              });
-            });
-
-          </script>
         </article>
-
+        <!-- generic -->
         <article class="style3">
           <span class="image">
             <img src="images/pic03.jpg" alt="" />
@@ -69,8 +43,24 @@
             </div>
           </a>
         </article>
+
       </section>
     </div>
   </div>
+
+  <script type="text/javascript">
+    $('a.routeB').click(function(popup) {
+      swal({
+        title: "Insert your zipcode",
+        text: "This will allow us to pre-populate candidates in your districts.",
+        type: "input",
+        inputType: "text",
+        showCancelButton: true,
+        closeOnConfirm: false
+      }, function(zipcode) {
+        window.location.href = '/campaign/'+zipcode;
+      });
+    });
+  </script>
 
 <% include ./partials/footer.ejs %>
