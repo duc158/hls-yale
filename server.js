@@ -87,7 +87,7 @@ app.get('/', function(req, res) {
 		});
 
 	// phonebank
-	app.get('/phonebank', loadPhonebanks,function(req, res) {
+	app.get('/phonebank/:zipcode', loadPhonebanks, function(req, res) {
 	  res.render('phonebank/list');
 	});
 
@@ -133,7 +133,7 @@ app.get('/', function(req, res) {
 
 		// load all phonebank
 		function loadPhonebanks(req, res, next) {
-			Phonebanks.find(function(err, phonebank) {
+			Phonebanks.find({zipcode: req.params.zipcode}, function(err, phonebank) {
 		      if(!err) {
 		  			res.locals.phonebank = phonebank;
 		  		}

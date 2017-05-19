@@ -17,24 +17,52 @@
           <span class="image">
             <img src="images/pic01.jpg" alt="" />
           </span>
-          <a href="/phonebank">
+          <a class="phonebank" href="#">
             <h2>Phonebank</h2>
             <div class="content">
               <p>The most comprehensive collection of Phone Bank.</p>
             </div>
           </a>
+          <script type="text/javascript">
+            $('a.phonebank').click(function(popup) {
+              swal({
+                title: "Insert your zipcode",
+                text: "This will allow us to pre-populate candidates in your districts.",
+                type: "input",
+                inputType: "text",
+                showCancelButton: true,
+                closeOnConfirm: false
+              }, function(zipcode) {
+                window.location.href = '/phonebank/'+zipcode;
+              });
+            });
+          </script>
         </article>
         <!-- donate -->
         <article class="style2">
           <span class="image">
             <img src="images/pic02.jpg" alt="" />
           </span>
-          <a class="routeA" href="#">
+          <a class="campaign" href="#">
             <h2>Donate</h2>
             <div class="content">
               <p>Make a donation to your local candidate.</p>
             </div>
           </a>
+          <script type="text/javascript">
+            $('a.campaign').click(function(popup) {
+              swal({
+                title: "Insert your zipcode",
+                text: "This will allow us to pre-populate candidates in your districts.",
+                type: "input",
+                inputType: "text",
+                showCancelButton: true,
+                closeOnConfirm: false
+              }, function(zipcode) {
+                window.location.href = '/campaign/'+zipcode;
+              });
+            });
+          </script>
         </article>
         <!-- generic -->
         <article class="style3">
@@ -52,20 +80,5 @@
       </section>
     </div>
   </div>
-
-  <script type="text/javascript">
-    $('a.routeA').click(function(popup) {
-      swal({
-        title: "Insert your zipcode",
-        text: "This will allow us to pre-populate candidates in your districts.",
-        type: "input",
-        inputType: "text",
-        showCancelButton: true,
-        closeOnConfirm: false
-      }, function(zipcode) {
-        window.location.href = '/campaign/'+zipcode;
-      });
-    });
-  </script>
 
 <% include ./partials/footer.ejs %>
