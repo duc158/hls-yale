@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 
 const phonebankSchema = new Schema({
   candidate: String,
-  location: String,
   office: String,
   party: String,
   link: String,
-  callDate: String
+  callDate: String,
+  zipcode: String,
+  location: String,
+  flag: Boolean
 });
 
 module.exports = mongoose.model('Phonebanks', phonebankSchema);
