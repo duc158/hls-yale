@@ -5,9 +5,10 @@ const campaignSchema = new Schema({
   candidate: String,
   office: String,
   party: String,
+  link: String,
   electionDate: String,
-  zipcode: String,
   location: String,
+  zipcode: String,
   flag: Boolean
 });
 

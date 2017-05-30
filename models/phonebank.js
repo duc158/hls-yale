@@ -7,8 +7,8 @@ const phonebankSchema = new Schema({
   party: String,
   link: String,
   callDate: String,
-  zipcode: String,
   location: String,
+  zipcode: String,
   flag: Boolean
 });
 
