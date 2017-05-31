@@ -78,7 +78,7 @@ app.get('/', function(req, res) {
 
     // admin
     app.get('/admin', isLoggedIn, function(req, res) {
-      const admin = "alex.le@yale.edu, ssanyal@jd17.law.harvard.edu, byronruby@gmail.com";
+      const admin = "admin@hls-yale.com";
       if (admin.indexOf(req.user.local.email) > -1) {
         res.render('admin/admin', {user : req.user});
       } else {
