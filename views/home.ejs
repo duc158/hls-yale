@@ -27,11 +27,11 @@
             $('a.phonebank').click(function(popup) {
               swal({
                 title: "Insert your zipcode",
-                text: "This will allow us to pre-populate candidates in your districts.",
+                text: "This will allow us to pre-populate candidates in your districts. Otherwise, click OK to see all phonebank.",
                 type: "input",
                 inputType: "text",
-                showCancelButton: true,
-                closeOnConfirm: false
+                // showCancelButton: true,
+                // closeOnConfirm: false
               }, function(zipcode) {
                 window.location.href = '/phonebank/'+zipcode;
               });
@@ -53,11 +53,11 @@
             $('a.campaign').click(function(popup) {
               swal({
                 title: "Insert your zipcode",
-                text: "This will allow us to pre-populate candidates in your districts.",
+                text: "This will allow us to pre-populate candidates in your districts. Otherwise, click OK to see all campaigns",
                 type: "input",
                 inputType: "text",
-                showCancelButton: true,
-                closeOnConfirm: false
+                // showCancelButton: true,
+                // closeOnConfirm: false
               }, function(zipcode) {
                 window.location.href = '/campaign/'+zipcode;
               });
