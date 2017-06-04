@@ -87,6 +87,10 @@ app.get('/', function(req, res) {
 		});
 
 	// phonebank
+  app.get('/phonebank', loadAllPhonebanks, function(req, res) {
+	  res.render('phonebank/list');
+	});
+
 	app.get('/phonebank/:zipcode', loadPhonebanks, function(req, res) {
 	  res.render('phonebank/list');
 	});
@@ -131,7 +135,22 @@ app.get('/', function(req, res) {
 
 	// Middleware
 
-		// load all phonebank
+    // load phonebank by zipcode
+    function loadAllPhonebanks(req, res, next) {
+      Phonebanks.find(function(err, phonebank) {
+          if(!err) {
+            res.locals.phonebank = phonebank;
+          }
+          else {
+            console.log('Error loading phonebanks.');
+            res.redirect('/');
+          }
+          next();
+        }
+      );
+    }
+
+		// load phonebank by zipcode
 		function loadPhonebanks(req, res, next) {
 			Phonebanks.find({zipcode: req.params.zipcode}, function(err, phonebank) {
 		      if(!err) {
@@ -146,7 +165,7 @@ app.get('/', function(req, res) {
 		  );
 		}
 
-		// load all campaigns
+		// load campaigns by zipcode
 		function loadCampaigns(req, res, next) {
 			Campaigns.find({zipcode: req.params.zipcode}, function(err, campaign) {
 					if(!err) {
