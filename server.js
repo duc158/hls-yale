@@ -113,6 +113,10 @@ app.get('/', function(req, res) {
 	});
 
 	// donate campaign
+  app.get('/campaign', loadAllCampaigns,function(req, res) {
+		res.render('campaign/list');
+	});
+
 	app.get('/campaign/:zipcode', loadCampaigns,function(req, res) {
 		res.render('campaign/list');
 	});
@@ -163,6 +167,21 @@ app.get('/', function(req, res) {
 		  		next();
 			  }
 		  );
+		}
+
+    // load all campaigns
+		function loadAllCampaigns(req, res, next) {
+			Campaigns.find(function(err, campaign) {
+					if(!err) {
+						res.locals.campaign = campaign;
+					}
+					else {
+						console.log('Error loading campaigns.');
+						res.redirect('/');
+					}
+					next();
+				}
+			);
 		}
 
 		// load campaigns by zipcode
