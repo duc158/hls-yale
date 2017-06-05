@@ -112,6 +112,22 @@ app.get('/', function(req, res) {
 	  });
 	});
 
+  app.post('/phonebank/search', function(req, res) {
+    Phonebanks.find({ $or:[
+        { candidate : { $regex: new RegExp(req.body.keyword, "i") } },
+        { location  : { $regex: new RegExp(req.body.keyword, "i") } },
+        { office    : { $regex: new RegExp(req.body.keyword, "i") } },
+        { party     : { $regex: new RegExp(req.body.keyword, "i") } },
+      ]},
+      function(err, phonebank) {
+        if(!err) {
+          res.locals.phonebank = phonebank;
+          res.render('phonebank/list')
+        }
+      }
+    );
+  });
+
 	// donate campaign
   app.get('/campaign', loadAllCampaigns,function(req, res) {
 		res.render('campaign/list');
