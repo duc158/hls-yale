@@ -112,6 +112,7 @@ app.get('/', function(req, res) {
 	  });
 	});
 
+  // Search
   app.post('/phonebank/search', function(req, res) {
     Phonebanks.find({ $or:[
         { candidate : { $regex: new RegExp(req.body.keyword, "i") } },
@@ -152,6 +153,22 @@ app.get('/', function(req, res) {
 			const errors = "Error adding the campaign";
 		});
 	});
+
+  // Search
+  app.post('/campaign/search', function(req, res) {
+    Campaigns.find({ $or:[
+        { candidate : { $regex: new RegExp(req.body.keyword, "i") } },
+        { office    : { $regex: new RegExp(req.body.keyword, "i") } },
+        { party     : { $regex: new RegExp(req.body.keyword, "i") } },
+      ]},
+      function(err, campaign) {
+        if(!err) {
+          res.locals.campaign = campaign;
+          res.render('campaign/list')
+        }
+      }
+    );
+  });
 
 	// Middleware
 

@@ -2,6 +2,17 @@
 
 <div id="main">
   <div class="inner">
+    <!-- Search -->
+    <section>
+      <form action="../campaign/search" method="POST">
+        <div class="row uniform">
+          <div class="12u">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" class="form-inline" name="keyword" placeholder="Search by Candidate Name, Office or Party">
+          </div>
+        </div>
+      </form>
+    </section>
     <!-- Table -->
     <section>
         <h2>Campaign</h2>
@@ -13,7 +24,7 @@
                 <th>Office Sought</th>
                 <th>Party</th>
                 <th>Election Date</th>
-                <th>Zipcode</th>
+                <th>Link</th>
               </tr>
             </thead>
             <tbody>
