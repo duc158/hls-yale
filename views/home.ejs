@@ -5,10 +5,14 @@
     <div class="inner">
       <header>
         <% if (locals.user) { %>
-          Welcome, <%=locals.user.local.email%>.
-          <a href="profile">Go to your profile</a> or <a href="/logout">Logout</a>
+          <p>
+            Welcome, <%=locals.user.local.email%>.
+            <a href="profile">Go to your profile</a> or <a href="/logout">Logout</a>
+          </p>
         <% } else { %>
-          Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
+          <p>
+            Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
+          </p>
         <% } %>
       </header>
       <section class="tiles">
