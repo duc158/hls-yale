@@ -1,5 +1,11 @@
 <% include ../partials/header.ejs %>
 
+<script>
+$( document ).ready(function() {
+  $('#phonebank-table').dynatable();
+});
+</script>
+
 <div id="main">
   <div class="inner">
     <!-- Search -->
@@ -18,7 +24,7 @@
     <section>
         <h2>Phonebank</h2>
         <div class="table-wrapper">
-        <table>
+        <table id="phonebank-table">
           <thead>
             <tr>
               <th>Candidate Name</th>
