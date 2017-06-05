@@ -1,4 +1,15 @@
 <% include ../partials/header.ejs %>
+<script>
+$( document ).ready(function() {
+  $('#campaign-table').dynatable({
+    features: {
+      paginate: false,
+      search: false
+    }
+  }
+  );
+});
+</script>
 
 <div id="main">
   <div class="inner">
@@ -7,7 +18,6 @@
       <form action="../campaign/search" method="POST">
         <div class="row uniform">
           <div class="12u">
-            <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text" class="form-inline" name="keyword" placeholder="Search by Candidate Name, Office or Party">
           </div>
         </div>
@@ -17,7 +27,7 @@
     <section>
         <h2>Campaign</h2>
         <div class="table-wrapper">
-          <table>
+          <table id="campaign-table">
             <thead>
               <tr>
                 <th>Candidate Name</th>
