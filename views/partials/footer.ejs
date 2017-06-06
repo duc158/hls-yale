@@ -30,6 +30,9 @@ $(document).ready(function() {
   $('#dynatable').dynatable({
     features: {
       search: false
+    },
+    dataset: {
+      perPageOptions: [10,20,50]
     }
   }
   );
