@@ -1,15 +1,4 @@
 <% include ../partials/header.ejs %>
-<script>
-$( document ).ready(function() {
-  $('#campaign-table').dynatable({
-    features: {
-      paginate: false,
-      search: false
-    }
-  }
-  );
-});
-</script>
 
 <div id="main">
   <div class="inner">
@@ -27,7 +16,7 @@ $( document ).ready(function() {
     <section>
         <h2>Campaign</h2>
         <div class="table-wrapper">
-          <table id="campaign-table">
+          <table id="dynatable">
             <thead>
               <tr>
                 <th>Candidate Name</th>
