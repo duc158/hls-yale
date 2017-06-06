@@ -21,6 +21,13 @@ th a:hover {
   margin-bottom: 10px;
 }
 
+.dynatable-per-page .dynatable-per-page-select {
+  display: inline;
+  width: auto;
+  height: 100%;
+  margin-bottom: 2em;
+}
+
 .dynatable-pagination-links {
   float: right;
 }
