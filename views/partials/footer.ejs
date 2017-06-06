@@ -29,7 +29,11 @@
 $(document).ready(function() {
   $('#dynatable').dynatable({
     features: {
-      search: false
+      search: true
+    },
+    inputs: {
+      paginationPrev: 'Prev',
+      paginationNext: 'Next'
     },
     dataset: {
       perPageOptions: [10,20,50]

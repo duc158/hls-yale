@@ -52,8 +52,11 @@ th a:hover {
   cursor: pointer;
 }
 
-.dynatable-active-page,
+li .dynatable-active-page {
+  padding-left: 0;
+}
 .dynatable-disabled-page {
+  padding-left: 0;
   cursor: text;
 }
 .dynatable-active-page:hover,
